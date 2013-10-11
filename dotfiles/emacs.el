@@ -36,7 +36,7 @@
 (set-default-font "Inconsolata 14")
 
 ;; try to load cedet
-(load-file "~/dev_tools/cedet-1.1/common/cedet.el")
+(load-file "~/.emacs.d/cedet-1.1/common/cedet.el")
 (global-ede-mode 1) ;; enable project managment system
 (semantic-load-enable-code-helpers) ;; enable prototype help and smart completleion
 (global-srecode-minor-mode 1) ;; enable template insertion menu
