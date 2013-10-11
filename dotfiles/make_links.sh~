@@ -1,0 +1,4 @@
+#!/bin/bash
+
+ln -sfi emacs ../.emacs
+ln -sfi emacs.d ../.emacs.d
