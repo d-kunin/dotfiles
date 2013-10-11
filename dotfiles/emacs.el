@@ -9,8 +9,11 @@
 (global-whitespace-mode t)
 
 (custom-set-variables
- '(ansi-color-names-vector ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
+ '(ansi-color-names-vector
+ ["#242424" "#e5786d" "#95e454" "#cae682"
+ "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
  '(custom-enabled-themes (quote (wheatgrass))))
+
 (custom-set-faces)
 (put 'erase-buffer 'disabled nil)
 
@@ -21,10 +24,10 @@
 ;; add autocomplete
 (add-to-list 'load-path "~/.emacs.d/")
 (require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d//ac-dict")
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 (ac-config-default)
 
-;; Now auto-complete must work? Or by tab-meta?
+;; Autocomplete key
 (define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
 
 ;; font customization
@@ -54,3 +57,7 @@
   "Major mode for editing Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+
+;; file backups
+(setq backup-directory-alist '(("." . "~/.saves")))
+(setq backup-by-copying t)
