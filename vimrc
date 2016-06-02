@@ -31,12 +31,4 @@ set backupskip=/tmp/*,/private/tmp/*
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set writebackup
 
-" execute pathogen#infect()
-" filetype plugin indent on
-
-" let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
-" nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>
-
-" autocmd! GUIEnter * set vb t_vb=
-    
 set autochdir
