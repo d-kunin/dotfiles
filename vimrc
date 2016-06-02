@@ -32,3 +32,5 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set writebackup
 
 set autochdir
+
+autocmd FileType make setlocal noexpandtab
