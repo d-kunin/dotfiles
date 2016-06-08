@@ -1,6 +1,6 @@
 execute pathogen#infect()
 
-colorscheme badwolf
+colorscheme molokai 
 syntax enable
 
 set tabstop=4
