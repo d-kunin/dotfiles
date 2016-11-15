@@ -34,25 +34,24 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set writebackup
 
 set autochdir
+set autoread
 
-" strips trailing whitespace at the end of files. this
-" is called on buffer write in the autogroup above.
-function! <SID>StripTrailingWhitespaces()
-    " save last search & cursor position
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
+function StripTrailingWhitespace()
+  if !&binary && &filetype != 'diff'
+    normal mz
+    normal Hmy
     %s/\s\+$//e
-    let @/=_s
-    call cursor(l, c)
+    normal 'yz<CR>
+    normal `z
+  endif
 endfunction
 
 augroup configgroup
     autocmd!
     autocmd FileType make setlocal noexpandtab
     autocmd VimEnter * highlight clear SignColumn
-    autocmd BufWritePre *.php,*.py,*.js,*.txt,*.hs,*.java,*.md
-                \:call <SID>StripTrailingWhitespaces()
+"    autocmd BufWritePre *.php,*.py,*.js,*.txt,*.hs,*.java,*.md
+"                \:call <SID>StripTrailingWhitespaces()
     autocmd FileType ruby setlocal commentstring=#\ %s
     autocmd FileType python setlocal commentstring=#\ %s
     autocmd BufEnter *.cls setlocal filetype=java
